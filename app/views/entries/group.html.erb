@@ -1,0 +1,17 @@
+<% @page_title = "Category - " + @para %>
+
+<% if @groups.present? %>
+  <% @groups.each do |group| %>
+<div class="entry_header">
+<p><%= group.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
+<h2><%= group.title %></h2>
+</div>
+<p><%= markdown(truncate(group.body, length: 80)) %></p>
+<p><%= link_to "もっと読む", group %></p>
+<%= render "footer", entry: group %>
+  <% end %>
+<%= will_paginate @groups %>
+
+<% else %>
+<p>記事がありません。</p>
+<% end %>

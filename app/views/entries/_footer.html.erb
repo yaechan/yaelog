@@ -1,0 +1,8 @@
+<p class="entry_footer">
+<% if @current_member %>
+<%= Entry.status_text(entry.status) %> |
+<%= link_to "編集", [:edit, entry] %> |
+<%= link_to "削除", entry, method: :delete, confirm: "本当に削除しますか？" %> |
+<% end %>
+カテゴリ：<%= link_to entry.category, { controller: "entries", action: "group", para: entry.category } %>
+</p>

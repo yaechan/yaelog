@@ -1,0 +1,62 @@
+<table class="attr">
+  <tr>
+  	<th width="150"><%= form.label :name %></th>
+  	<td><%= form.text_field :name, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :comment %></th>
+  	<td><%= form.text_area :comment, rows: 10, cols: 45 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :birthday %></th>
+  	<td><%= form.date_select :birthday, start_year: 1980, end_year: 2000, use_month_numbers: true %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :hometown %></th>
+  	<td><%= form.text_field :hometown, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :bloodtype %></th>
+  	<td><%= form.select :bloodtype, ["A型", "B型", "O型", "AB型"] %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :university %></th>
+  	<td><%= form.text_field :university, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :ability %></th>
+  	<td><%= form.text_field :ability, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :hobby %></th>
+  	<td><%= form.text_field :hobby, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :merit %></th>
+  	<td><%= form.text_field :hobby, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :demerit %></th>
+  	<td><%= form.text_field :demerit, size:50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :favorite_word %></th>
+  	<td><%= form.text_field :favorite_word, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :language %></th>
+  	<td><%= form.text_field :language, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :favorite_language, size: 50 %></th>
+  	<td><%= form.text_field :favorite_language, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :favorite_tool %></th>
+  	<td><%= form.text_field :favorite_tool, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :editor %></th>
+  	<td><%= form.text_field :editor, size: 50 %></td>
+  </tr>
+</table>

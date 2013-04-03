@@ -1,0 +1,15 @@
+<% @page_title = @entry.title %>
+
+<div class="entry_header">
+<p><%= @entry.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
+<h2><%= @entry.title %></h2>
+</div>
+
+<%= markdown(@entry.body) %>
+
+<%= render "footer", entry: @entry %>
+
+<div class="pagination">
+<%= link_to_unless_current "次の記事", Entry.readable_for(@current_member).find_by_next(@entry.posted_at) %>
+<%= link_to_unless_current "前の記事", Entry.readable_for(@current_member).find_by_prev(@entry.posted_at) %>
+</div>

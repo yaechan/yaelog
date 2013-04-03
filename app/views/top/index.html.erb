@@ -1,0 +1,14 @@
+<% if @entries.present? %>
+  <% @entries.each do |entry| %>
+<div class="entry_header">
+<p><%= entry.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
+<h2><%= entry.title %></h2>
+</div>
+<p><%= markdown(entry.body) %></p>
+<%= render "entries/footer", entry: entry %>
+  <% end %>
+<%= will_paginate @entries, :previous_label => "次の記事", :next_label => "前の記事", page_links: false %>
+
+<% else %>
+<p>記事がありません。</p>
+<% end %>

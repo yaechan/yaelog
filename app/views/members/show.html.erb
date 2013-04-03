@@ -1,0 +1,80 @@
+<% @page_title = "about Yae" %>
+<h1><%= @page_title %></h1>
+
+<% if @current_member %>
+<p><%= link_to "編集", [:edit, :member] %></p>
+<% end %>
+
+<%= form_for @member do |form| %>
+<table class="attr">
+  <tr>
+  	<th width="150"><%= form.label :name %></th>
+  	<td><%= @member.name %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :comment %></th>
+  	<td><%= simple_format(@member.comment) %></td>
+  </tr>
+</table>
+<br>
+<table class="attr">
+  <tr>
+  	<th width="150"><%= form.label :birthday %></th>
+  	<td><%= @member.birthday.strftime("%Y年%m月%d日") %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :hometown %></th>
+  	<td><%= @member.hometown %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :bloodtype %></th>
+  	<td><%= @member.bloodtype %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :university %></th>
+  	<td><%= @member.university %></td>
+  </tr>
+</table>
+<br>
+<table class="attr">
+  <tr>
+  	<th width="150"><%= form.label :ability %></th>
+  	<td><%= @member.ability %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :hobby %></th>
+  	<td><%= @member.hobby %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :merit %></th>
+  	<td><%= @member.merit %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :demerit %></th>
+  	<td><%= @member.demerit %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :favorite_word %></th>
+  	<td><%= @member.favorite_word %></td>
+  </tr>
+</table>
+<br>
+<table class="attr">
+  <tr>
+  	<th width="150"><%= form.label :language %></th>
+  	<td><%= @member.language %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :favorite_language %></th>
+  	<td><%= @member.favorite_language %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :favorite_tool %></th>
+  	<td><%= @member.favorite_tool %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :editor %></th>
+  	<td><%= @member.editor %></td>
+  </tr>
+</table>
+<% end %>

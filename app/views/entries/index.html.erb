@@ -1,0 +1,17 @@
+<% @page_title = "ブログ一覧" %>
+
+<% if @entries.present? %>
+  <% @entries.each do |entry| %>
+<div class="entry_header">
+<p><%= entry.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
+<h2><%= entry.title %></h2>
+</div>
+<p><%= markdown(truncate(entry.body, length: 80)) %></p>
+<p><%= link_to "もっと読む", entry %></p>
+<%= render "footer", entry: entry %>
+  <% end %>
+<%= will_paginate @entries %>
+
+<% else %>
+<p>記事がありません。</p>
+<% end %>

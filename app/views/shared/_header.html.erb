@@ -1,0 +1,15 @@
+<% if @current_member %>
+<p class="member">
+ログイン中&nbsp;&nbsp;&nbsp;
+<%= link_to "ログアウト", :session, method: :delete, confirm: "ログアウトしますか？" %>
+</p>
+<% end %>
+
+<div class="menubar">
+<%= menu_link_to "top", root_path %> &nbsp;&nbsp;&nbsp;
+<% if @current_member %>
+<%= menu_link_to "ブログ作成", :new_entry %> &nbsp;&nbsp;&nbsp;
+<% end %>
+<%= menu_link_to "ブログ一覧", :entries %> &nbsp;&nbsp;&nbsp;
+<%= menu_link_to "about Yae", :member %>
+</div>

@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    attributes:
+      member:
+        name: "ニックネーム"
+        comment: "コメント"
+        birthday: "生年月日"
+        hometown: "出身地"
+        bloodtype: "血液型"
+        university: "出身大学"
+        ability: "特技"
+        hobby: "趣味"
+        merit: "長所"
+        demerit: "短所"
+        favorite_word: "好きな言葉"
+        language: "使える言語"
+        favorite_language: "好きな言語"
+        favorite_tool: "好きな開発ツール"
+        editor: "使用エディタ"
+        password: "パスワード"
+        password_confirmation: "パスワードの確認"
+      entry:
+        title: "タイトル"
+        body: "本文"
+        category: "カテゴリ"
+        posted_at: "日時"
+        status: "状態"
+        status_draft: "下書き"
+        status_public: "公開"
+
+  will_paginate:
+    previous_label: "前"
+    next_label: "次"

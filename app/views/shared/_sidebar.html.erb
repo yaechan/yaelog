@@ -1,0 +1,41 @@
+<h2>Profile</h2>
+<%= image_tag("profile.jpg", size: "60x60", alt: "profile_photo") %>
+<p class="profile_comment">駆け出しプログラマ　やえのブログ</p>
+
+<h2>Search</h2>
+<%= form_tag :search_entries, method: :get do %>
+<p><%= text_field_tag "search_text", params[:search_text] %>
+<%= image_submit_tag "search.png", size: "16x16", alt: "search", class: "search_bottun" %></p>
+<% end %>
+
+<h2>最近のブログ</h2>
+<ul>
+<% Entry.readable_for(@current_member).sidebar_entries(5).each do |entry| %>
+<li><%= link_to entry.title, entry %></li>
+<% end %>
+</ul>
+
+<h2>Archives</h2>
+<ul>
+<% Entry.readable_for(@current_member).sidebar_archives.each do |month, entries| %>
+<li>
+<%= link_to month.strftime("%Y年%m月"), { controller: "entries", action: "archives", id: entries } %>
+(<%= entries.count %>)
+</li>
+<% end %>
+</ul>
+
+<h2>Category</h2>
+<ul>
+<% Entry.readable_for(@current_member).sidebar_category.each do |category, entries| %>
+<li><%= link_to category, { controller: "entries", action: "group", para: category } %>
+(<%= entries.count %>)
+</li>
+<% end %>
+</ul>
+
+<h2>Links</h2>
+<ul>
+<li>まだ何もありません。</li>
+<li><%= link_to "たとえば", "##" %></li>
+</ul>

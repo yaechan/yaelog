@@ -1,0 +1,30 @@
+<table class="attr">
+  <tr>
+  	<th width="100"><%= form.label :title %></th>
+  	<td><%= form.text_field :title, size: 50 %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :body %></th>
+  	<td><%= form.text_area :body, rows: 10, cols: 45 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :category %></th>
+    <td>
+      <%= text_field_tag :text_category %>
+      <%= select_tag :select_category,
+                     options_from_collection_for_select(@categories,
+                                                        :category,
+                                                        :category,
+                                                        @entry.category),
+                     :include_blank => true %>
+    </td>
+  </tr>
+  <tr>
+  	<th><%= form.label :posted_at, for: "entry_posted_at_1i" %></th>
+  	<td><%= form.datetime_select :posted_at, start_year: 2012, end_year: Time.now.year + 1, use_month_numbers: true %></td>
+  </tr>
+  <tr>
+  	<th><%= form.label :status %></th>
+  	<td><%= form.select :status, Entry.status_options %></td>
+  </tr>
+</table>
