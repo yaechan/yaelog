@@ -18,7 +18,7 @@ class EntriesController < ApplicationController
 
   def edit
     @entry = Entry.find(params[:id])
-    @categories = Entry.group(:category)
+    @categories = Entry.group(:category).select(:category)
   end
 
   def create
