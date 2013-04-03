@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new(posted_at: Time.current)
-    @categories = Entry.group(:category)
+    @categories = Entry.group(:category).select(:category)
   end
 
   def edit
