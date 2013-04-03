@@ -16,6 +16,6 @@ Member.create({
   favorite_language: "Ruby",
   favorite_tool: "SublimeText2, Xcode, Emacs",
   editor: "SublimeText2",
-  password: "password",
-  password_confirmation: "password"
+  password: "yaechan0419",
+  password_confirmation: "yaechan0419"
   }, without_protection: true)
