@@ -5,6 +5,10 @@ class Entry < ActiveRecord::Base
 
   belongs_to :author, class_name: "Member", foreign_key: "member_id"
 
+  validates :title, :body, :category, :posted_at, presence: true
+#  validates :status, presence: true,
+#                     inclusion: { in: STATUS_VALUES }
+
   scope :common, where(status: "public")
   scope :time_over,
     ->{ now = Time.current

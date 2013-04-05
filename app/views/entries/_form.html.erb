@@ -1,3 +1,5 @@
+<%= render "shared/errors", obj: @entry %>
+
 <table class="attr">
   <tr>
   	<th width="100"><%= form.label :title %></th>
@@ -12,7 +14,7 @@
     <td>
       <%= text_field_tag :text_category %>
       <%= select_tag :select_category,
-                     options_from_collection_for_select(@categories,
+                     options_from_collection_for_select(Entry.group(:category).select(:category),
                                                         :category,
                                                         :category,
                                                         @entry.category),
