@@ -17,7 +17,7 @@
 
 <h2>Archives</h2>
 <ul>
-<% Entry.readable_for(@current_member).sidebar_archives.each do |month, entries| %>
+<% Entry.readable_for(@current_member).order("posted_at DESC").sidebar_archives.each do |month, entries| %>
 <li>
 <%= link_to month.strftime("%Y年%m月"), { controller: "entries", action: "archives", id: entries } %>
 (<%= entries.count %>)
