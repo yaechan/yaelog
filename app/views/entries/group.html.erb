@@ -6,7 +6,13 @@
 <p><%= group.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
 <h2><%= group.title %></h2>
 </div>
+
+<% begin %>
 <p><%= markdown(truncate(group.body, length: 80)) %></p>
+<% rescue %>
+<p><%= simple_format(truncate(group.body, length: 80)) %></p>
+<% end %>
+
 <p><%= link_to "もっと読む", group %></p>
 <%= render "footer", entry: group %>
   <% end %>

@@ -4,7 +4,13 @@
 <p><%= entry.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
 <h2><%= entry.title %></h2>
 </div>
+
+<% begin %>
 <p><%= markdown(entry.body) %></p>
+<% rescue %>
+<p><%= simple_format(entry.body) %></p>
+<% end %>
+
 <%= render "entries/footer", entry: entry %>
   <% end %>
 <%= will_paginate @entries, :previous_label => "次の記事", :next_label => "前の記事", page_links: false %>

@@ -6,7 +6,13 @@
 <p><%= entry.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
 <h2><%= entry.title %></h2>
 </div>
+
+<% begin %>
 <p><%= markdown(truncate(entry.body, length: 80)) %></p>
+<% rescue %>
+<p><%= simple_format(truncate(entry.body, length: 80)) %></p>
+<% end %>
+
 <p><%= link_to "もっと読む", entry %></p>
 <%= render "footer", entry: entry %>
   <% end %>

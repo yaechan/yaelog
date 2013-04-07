@@ -5,7 +5,11 @@
 <h2><%= @entry.title %></h2>
 </div>
 
+<% begin %>
 <%= markdown(@entry.body) %>
+<% rescue %>
+<%= simple_format(@entry.body) %>
+<% end %>
 
 <%= render "footer", entry: @entry %>
 
