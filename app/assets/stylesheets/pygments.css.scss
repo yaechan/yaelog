@@ -75,9 +75,16 @@
 }
 
 /* markdown用 */
-div#main_inner h3{
-  margin-top: 0;
-  margin-bottom: 2px;
+div#main_inner {
+  h3, h4 {
+    margin-top: 0;
+    margin-bottom: 2px;
+  }
+
+  h4 {
+    padding-left: 4px;
+    border-left: solid 4px #a9a9a9;
+  }
 }
 
 /* markdown用:codeblock title */
@@ -91,5 +98,5 @@ div#main_inner h5 {
   background-color: #fafafa;
   line-height: 1.4;
   font-family: Consolas,"Liberation Mono",Courier,monospace;
-  font-size: 13px;
+  font-size: 12px;
 }
