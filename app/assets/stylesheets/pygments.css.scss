@@ -74,6 +74,12 @@
   .il { color: #009999 } /* Literal.Number.Integer.Long */
 }
 
+/* markdown用 */
+div#main_inner h3{
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
 /* markdown用:codeblock title */
 div#main_inner h5 {
   margin-top: 0;
