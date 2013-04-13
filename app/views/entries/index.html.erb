@@ -8,9 +8,9 @@
 </div>
 
 <% begin %>
-<p><%= markdown(truncate(entry.body, length: 80)) %></p>
+<%= markdown(truncate(entry.body, length: 80)) %>
 <% rescue %>
-<p><%= simple_format(truncate(entry.body, length: 80)) %></p>
+<%= simple_format(truncate(entry.body, length: 80)) %>
 <% end %>
 
 <p><%= link_to "もっと読む", entry %></p>
