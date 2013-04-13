@@ -6,9 +6,9 @@
 </div>
 
 <% begin %>
-<p><%= markdown(entry.body) %></p>
+<%= markdown(entry.body) %>
 <% rescue %>
-<p><%= simple_format(entry.body) %></p>
+<%= simple_format(entry.body) %>
 <% end %>
 
 <%= render "entries/footer", entry: entry %>
