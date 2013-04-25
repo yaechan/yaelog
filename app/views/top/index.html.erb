@@ -1,19 +1,20 @@
-<% if @entries.present? %>
-  <% @entries.each do |entry| %>
+<% if @entry.present? %>
 <div class="entry_header">
-<p><%= entry.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
-<h2><%= entry.title %></h2>
+<p><%= @entry.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
+<h2><%= @entry.title %></h2>
 </div>
 
 <% begin %>
-<%= markdown(entry.body) %>
+<%= markdown(@entry.body) %>
 <% rescue %>
-<%= simple_format(entry.body) %>
+<%= simple_format(@entry.body) %>
 <% end %>
 
-<%= render "entries/footer", entry: entry %>
-  <% end %>
-<%= will_paginate @entries, :previous_label => "次の記事", :next_label => "前の記事", page_links: false %>
+<%= render "entries/footer", entry: @entry %>
+<div class="pagination">
+<%= link_to_unless_current "次の記事", Entry.readable_for(@current_member).find_by_next(@entry.posted_at) %>
+<%= link_to_unless_current "前の記事", Entry.readable_for(@current_member).find_by_prev(@entry.posted_at) %>
+</div>
 
 <% else %>
 <p>記事がありません。</p>
