@@ -9,9 +9,9 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.readable_for(@current_member).find(params[:id])
-    if Entry.readable_for(@current_member).order("posted_at DESC").first == @entry
-      redirect_to :root
-    end
+#    if Entry.readable_for(@current_member).order("posted_at DESC").first == @entry
+#      redirect_to :root
+#    end
   end
 
   def new
