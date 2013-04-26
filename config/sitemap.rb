@@ -24,7 +24,19 @@ SitemapGenerator::Sitemap.create do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
-  Entry.find_each do |entry|
-    add entry_path(entry)
-  end
+  add '/member'
+  add '/about'
+  add '/entries/2'
+  add '/entries/3'
+  add '/entries/4'
+  add '/entries/5'
+  add '/entries/6'
+  add '/entries/7'
+  add '/entries/8'
+  add '/entries/9'
+  add '/entries/14'
+  add '/entries/16'
+  add '/entries/19'
+  add '/entries/22'
+  add '/entries/25'
 end
