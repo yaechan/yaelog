@@ -51,6 +51,15 @@ div#main_inner {
   }
 
   .entry_header {
+    h1 {
+      margin-bottom: 0.5em;
+      border-bottom: 2px solid #a9a9a9;
+      color: #000000;
+      font-weight: bold;
+      font-size: 140%;
+//      font-size: 20px;
+    }
+
     h2 {
       margin-bottom: 0.5em;
       border-bottom: 2px solid #a9a9a9;
