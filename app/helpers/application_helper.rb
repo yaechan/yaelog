@@ -5,6 +5,12 @@ module ApplicationHelper
     title
   end
 
+  def description_tag
+    description = "プログラミング初心者が綴る成長の記録。Ruby on Railsで作成したブログで備忘録を認めました。"
+    description = @description_tag if @description_tag
+    description
+  end
+
   def menu_link_to(text, path)
   	link_to_unless_current(text, path) { content_tag(:span, text) }
   end

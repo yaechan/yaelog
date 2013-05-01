@@ -1,5 +1,6 @@
 <% @page_title = @entry.title %>
-<% set_meta_tags :description => truncate(@entry.body, length: 100) %>
+<% @description_tag = truncate(@entry.body, length: 100) %>
+<%# set_meta_tags :description => truncate(@entry.body, length: 100) %>
 
 <div class="entry_header">
 <p><%= @entry.posted_at.strftime("%Y-%m-%d %H:%M") %></p>
