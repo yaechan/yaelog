@@ -56,6 +56,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.4.1)
+      actionpack
     mime-types (1.23)
     multi_json (1.7.2)
     nokogiri (1.5.9)
@@ -132,6 +134,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
   jquery-rails
+  meta-tags
   nokogiri
   pg
   pygments.rb
