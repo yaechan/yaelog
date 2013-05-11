@@ -27,4 +27,11 @@ module ApplicationHelper
   	end
   	doc.to_s
   end
+#doc.search("//pre[@lang]").each do |pre|
+#      pre.replace Net::HTTP.post_form(URI.parse('http://pygments-1-4.appspot.com/'),
+#                                      {'lang'=>pre[:lang], 'code'=>pre.text.strip}).body
+#      pre.replace Pygments.highlight(pre, lexer: pre.children.attribute("class").value)
+#  end
+#  doc.to_s
+#  end
 end
