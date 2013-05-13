@@ -74,7 +74,10 @@
   .il { color: #009999 } /* Literal.Number.Integer.Long */
 }
 
+/* inline highlight */
 code {
+  font-family: Consolas,"Liberation Mono",Courier,monospace;
+  font-size: 12px;
   border: solid 1px #dddddd;
   border-radius: 3px;
   background-color: #f8f8f8;
