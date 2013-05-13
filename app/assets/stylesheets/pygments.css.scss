@@ -74,6 +74,12 @@
   .il { color: #009999 } /* Literal.Number.Integer.Long */
 }
 
+code {
+  border: solid 1px #dddddd;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+}
+
 /* markdown用 */
 div#main_inner {
   h3, h4 {
