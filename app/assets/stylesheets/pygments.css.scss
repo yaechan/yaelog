@@ -74,39 +74,6 @@
   .il { color: #009999 } /* Literal.Number.Integer.Long */
 }
 
-/* inline highlight */
-/*
-code {
-  border: solid 1px #dddddd;
-  border-radius: 3px;
-  background-color: #f8f8f8;
-  font-size: 12px;
-}
-
-em {
-  margin: 0 4px;
-  padding: 3px!important;
-  border: 1px solid rgba(0,0,0,.1);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  background-color: #333;
-  min-width: 24px;
-  height: 24px!important;
-  line-height: 24px!important;
-  text-align: center;
-  vertical-align: baseline;
-  font-size: 12px;
-  font-style: normal!important;
-  font-weight: normal!important;
-  color: #ffffff!important;
-  display: inline-block;
-  text-decoration: none;
-}
-*/
 /* markdown用 */
 div#main_inner {
   h3, h4 {
@@ -167,21 +134,3 @@ div#main_inner {
     text-decoration: none;
   }
 }
-
-/* markdown用:codeblock title */
-/*
-div#main_inner h5 {
-  margin-top: 0;
-  margin-bottom: 2px;
-  margin-left: 10px;
-  padding-top: 4px;
-  padding-left: 6px;
-  border: solid 1px #dddddd;
-  border-left-width: 6px;
-  border-radius: 3px;
-  background-color: #f8f8f8;
-  line-height: 1.4;
-  font-family: Consolas,"Liberation Mono",Courier,monospace;
-  font-size: 12px;
-}
-*/
