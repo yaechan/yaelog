@@ -294,10 +294,10 @@ div.pagination {
 //  font-size: 12px;
   word-spacing: 50px;
 
-  em { font-style: normal; }
+  em { font-style: normal!important; }
   em.current {
-    color: #e4007f;
-    font-weight: bold;
+    color: #e4007f!important;
+    font-weight: bold!important;
   }
 }
 
