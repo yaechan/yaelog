@@ -41,6 +41,7 @@ SitemapGenerator::Sitemap.create do
   add '/entries/17'
   add '/entries/18'
   add '/entries/19'
+  add '/entries/21'
   add '/entries/22'
   add '/entries/23'
   add '/entries/24'
