@@ -22,4 +22,4 @@ doc/
 .DS_Store
 .idea
 .secret
-/db/seeds.rb
+/db/seeds/
