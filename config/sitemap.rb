@@ -57,4 +57,5 @@ SitemapGenerator::Sitemap.create do
   add '/entries/36'
   add '/entries/37'
   add '/entries/42'
+  add '/entries/43'
 end
