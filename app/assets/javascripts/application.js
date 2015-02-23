@@ -18,4 +18,6 @@ $(function() {
   setTimeout(function() {
 	$(".notice").fadeOut("slow")
   }, 1000);
+
+  $("a[href^='http']:not([href*='yaelog.herokuapp.com'])").attr('target', '_blank');
 });
