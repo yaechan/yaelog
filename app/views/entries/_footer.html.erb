@@ -4,5 +4,9 @@
 <%= link_to "編集", [:edit, entry] %> |
 <%= link_to "削除", entry, method: :delete, confirm: "本当に削除しますか？" %> |
 <% end %>
-カテゴリ：<%= link_to entry.category, { controller: "entries", action: "group", para: entry.category } %>
+カテゴリ：
+<% entry.categories.order("categories.name").each_with_index do |category, index| %>
+	<%= link_to category.name, { controller: "entries", action: "group", para: category.name } %>
+	<%= "," unless entry.categories.length == index + 1 %>
+<% end %>
 </p>

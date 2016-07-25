@@ -27,9 +27,9 @@
 
 <h2>Category</h2>
 <ul>
-<% Entry.readable_for(@current_member).order("category ASC").sidebar_category.each do |category, entries| %>
+<% Entry.readable_for(@current_member).sidebar_category.each do |category| %>
 <li><%= link_to category, { controller: "entries", action: "group", para: category } %>
-(<%= entries.count %>)
+(<%= Entry.readable_for(@current_member).joins(:categories).where("categories.name = ?", category).count %>)
 </li>
 <% end %>
 </ul>

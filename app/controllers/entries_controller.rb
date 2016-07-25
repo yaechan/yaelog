@@ -22,12 +22,9 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(params[:entry])
     @entry.author = @current_member
-    if params[:select_category].present?
-      @entry.category = params[:select_category]
-    elsif params[:text_category].present?
-      @entry.category = params[:text_category]
-    end
+
     if @entry.save
+      @entry.attributes_category(params[:text_category])
   	  redirect_to @entry, notice: "記事を作成しました。"
     else
   	  render "new"
@@ -37,11 +34,8 @@ class EntriesController < ApplicationController
   def update
     @entry = Entry.find(params[:id])
     @entry.assign_attributes(params[:entry])
-    if params[:select_category].present?
-      @entry.category = params[:select_category]
-    elsif params[:text_category].present?
-      @entry.category = params[:text_category]
-    end
+    @entry.attributes_category(params[:text_category])
+
     if @entry.save
   	  redirect_to @entry, notice: "記事を更新しました。"
     else
@@ -57,7 +51,7 @@ class EntriesController < ApplicationController
 
   def group
     @para = params[:para]
-    @groups = Entry.readable_for(@current_member).order("posted_at DESC").where(:category => params[:para]).paginate(page: params[:page], per_page: 5)
+    @groups = Entry.readable_for(@current_member).order("posted_at DESC").joins(:categories).where("categories.name = ?", params[:para]).paginate(page: params[:page], per_page: 5)
   end
 
   def search

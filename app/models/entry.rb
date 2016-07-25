@@ -4,6 +4,7 @@ class Entry < ActiveRecord::Base
   STATUS_VALUES = %w(draft public)
 
   belongs_to :author, class_name: "Member", foreign_key: "member_id"
+  has_and_belongs_to_many :categories
 
   validates :title, :body, :category, :posted_at, presence: true
 
@@ -28,7 +29,11 @@ class Entry < ActiveRecord::Base
   	end
 
     def sidebar_category
-      Entry.all.group_by { |t| t.category }
+      joins(:categories).pluck("categories.name").uniq.sort
+    end
+
+    def form_category
+      joins(:categories).select("categories.name").uniq.order("categories.name")
     end
 
     def search(query)
@@ -51,4 +56,28 @@ class Entry < ActiveRecord::Base
       order("posted_at ASC").where("posted_at > ?", time).find(:first)
     end
   end
+
+  def destroy
+    super
+    self.categories.clear
+    destroy_no_associated_categories
+  end
+
+  def attributes_category(joined_category_name)
+    category_names = joined_category_name.split(",")
+    self.categories.clear
+
+    category_names.each do |category_name|
+      next if category_name.blank?
+      category = Category.find_by_name(category_name) || Category.create(name: category_name)
+      self.categories << category
+    end
+
+    destroy_no_associated_categories
+  end
+
+  private
+    def destroy_no_associated_categories
+      Category.destroy_all("id NOT IN (SELECT DISTINCT(category_id) FROM categories_entries)")
+    end
 end

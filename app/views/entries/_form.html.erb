@@ -12,13 +12,13 @@
   <tr>
     <th><%= form.label :category %></th>
     <td>
-      <%= text_field_tag :text_category %>
+      <%= text_field_tag :text_category, @entry.categories.pluck("name").sort.join(",") %>
       <%= select_tag :select_category,
-                     options_from_collection_for_select(Entry.group(:category).select(:category),
-                                                        :category,
-                                                        :category,
-                                                        @entry.category),
+                     options_from_collection_for_select(Entry.readable_for(@current_member).form_category,
+                                                        :name,
+                                                        :name),
                      :include_blank => true %>
+      <%= button_tag "追加", id: "add_selected_category", type: "button" %>
     </td>
   </tr>
   <tr>
