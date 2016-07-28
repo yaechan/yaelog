@@ -31,6 +31,7 @@ module Yaelog
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    I18n.enforce_available_locales = true
     config.i18n.default_locale = :ja
 
     # Configure the default encoding used in templates for Ruby 1.9.
@@ -59,6 +60,6 @@ module Yaelog
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    RubyPython.start(python_exe: "python2.7")
+    RubyPython.start
   end
 end
