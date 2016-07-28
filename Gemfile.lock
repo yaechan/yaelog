@@ -43,7 +43,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    ffi (1.0.11)
+    ffi (1.9.3)
     hike (1.2.3)
     i18n (0.6.9)
     journey (1.0.4)
@@ -102,9 +102,9 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     redcarpet (3.0.0)
-    rubypython (0.6.1)
+    rubypython (0.6.3)
       blankslate (>= 2.1.2.3)
-      ffi (~> 1.0.7)
+      ffi (>= 1.0.7)
     sass (3.2.14)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -149,7 +149,7 @@ DEPENDENCIES
   rails-i18n
   rails_12factor (= 0.0.2)
   redcarpet
-  rubypython (= 0.6.1)
+  rubypython (= 0.6.3)
   sass-rails (~> 3.2.3)
   sitemap_generator
   sqlite3

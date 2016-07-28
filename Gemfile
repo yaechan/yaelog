@@ -25,7 +25,7 @@ gem 'redcarpet'
 gem 'pygments.rb'
 gem 'nokogiri'
 
-gem 'rubypython', '0.6.1'
+gem 'rubypython', '0.6.3'
 
 gem 'sitemap_generator'
 gem 'meta-tags', :require => 'meta_tags'
