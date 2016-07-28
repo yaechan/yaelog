@@ -60,6 +60,6 @@ module Yaelog
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    RubyPython.start
+    RubyPython.start(python_exe: "python2.7")
   end
 end
